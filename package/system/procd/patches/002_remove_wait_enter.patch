@@ -1,0 +1,24 @@
+diff -crN a/utils/askfirst.c b/utils/askfirst.c
+*** a/utils/askfirst.c	2016-08-29 15:58:03.773450879 +0800
+--- b/utils/askfirst.c	2016-08-29 15:59:07.817452406 +0800
+***************
+*** 21,26 ****
+--- 21,28 ----
+  
+  int main(int argc, char **argv)
+  {
++ #if 0
++         /*RPD: We wont need this wait for press Enter*/
+  	int c;
+  
+  	printf("Please press Enter to activate this console.\n");
+***************
+*** 31,36 ****
+--- 33,39 ----
+  	}
+  	while (c != 0xA);
+  
++ #endif
+  	if (argc < 2) {
+  		printf("%s needs to be called with at least 1 parameter\n", argv[0]);
+  		return -1;
